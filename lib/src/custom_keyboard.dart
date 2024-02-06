@@ -43,12 +43,25 @@ class _CustomKeyBoardState extends State<CustomKeyBoard> {
       if (icon != null) {
         return icon;
       } else {
-        return Text(
-          number?.toString() ?? "",
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            color: widget.pinTheme.keysColor,
+        return Container(
+          width: 100, // Set the width and height to make it a circle
+          height: 70,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle, // Use BoxShape.circle to make it a circle
+            border: Border.all(
+              color: Colors.grey, // Set the border color
+              width: 2, // Set the border width
+            ),
+          ),
+          child: Center(
+            child: Text(
+              number?.toString() ?? "",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: widget.pinTheme.keysColor,
+              ),
+            ),
           ),
         );
       }
